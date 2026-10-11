@@ -1,0 +1,11 @@
+public ArrayList<Factura> obtenerFacturaIphone(){
+            ArrayList<Factura> facturaIphone= new ArrayList<>();
+            for(Factura factura: listaFacturas){
+                for(Producto producto : factura.getProductos()){
+                    if(producto.getCodigo().equals("123456")){
+                        facturaIphone.add(factura);
+                    }
+                }
+            }
+            return facturaIphone;
+        }
