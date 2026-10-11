@@ -1,0 +1,10 @@
+public ArrayList<Producto> recibirCategoria(String categoria){
+            ArrayList<Producto> productoCategoria = new ArrayList<>();
+            for (Producto producto: hashMaplistaProductos.values()){
+                if(producto.getCategoria().equalsIgnoreCase(categoria)){
+                    productoCategoria.add(producto);
+                }
+
+            }
+            return productoCategoria;
+        }
