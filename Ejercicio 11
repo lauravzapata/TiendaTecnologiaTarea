@@ -1,0 +1,9 @@
+public ArrayList<Cliente> residenciaCliente() {
+            ArrayList<Cliente> ciudadCliente = new ArrayList<>();
+            for (Cliente cliente : listaClientes) {
+                if (cliente.getCiudad().equalsIgnoreCase("armenia")) {
+                    ciudadCliente.add(cliente);
+                }
+            }
+            return ciudadCliente;
+        }
