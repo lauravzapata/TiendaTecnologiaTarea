@@ -1,0 +1,12 @@
+public Optional<Producto> productoMayorPrecio() {
+            if (hashMaplistaProductos.size() == 0) {
+                return Optional.empty();
+            }
+            Producto mayor = null;
+            for (Producto producto : hashMaplistaProductos.values()) {
+                if (mayor == null || producto.getvalor() > mayor.getvalor()) {
+                    mayor = producto;
+                }
+            }
+            return Optional.of(mayor);
+        }
