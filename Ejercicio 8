@@ -1,0 +1,25 @@
+//en clase tienda:
+public ArrayList<Producto> precioMinMax(double precioMin , double precioMax){
+            ArrayList<Producto> productosRango = new ArrayList<>();
+
+            for(Producto producto: hashMaplistaProductos.values()){
+                if(producto.getvalor()>= precioMin && producto.getvalor<=precioMax){
+                    productosRango.add(producto);
+                }
+            }
+            return productosRango;
+        }
+
+//en el main
+double precioMin = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio mínimo:"));
+        double precioMax = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio máximo:"));
+        ArrayList<Producto> productosRango = tienda.precioMinMax(precioMin, precioMax);
+        if (productosRango.size() == 0) {
+            JOptionPane.showMessageDialog(null, "No se encontraron productos en ese rango de precios.");
+        }else{
+            String mensaje = "";
+            for (Producto producto : productosRango) {
+                mensaje += "Producto: " + producto.getNombre() + "\n Precio: " + producto.getvalor() + "\n";
+            }
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
