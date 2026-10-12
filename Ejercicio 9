@@ -1,0 +1,15 @@
+public ArrayList<Producto> productosTienda (){
+            ArrayList<Producto> todosLosProductosMenorMayor = new ArrayList<>();
+            for (Producto producto : hashMaplistaProductos.values()) {
+                todosLosProductosMenorMayor.add(producto);
+            }
+            for (int i = 0; i < listaOrdenada.size(); i++) {
+                for (int j = i + 1; j < listaOrdenada.size(); j++) {
+                    if (todosLosProductosMenorMayor.get(i).getvalor() > todosLosProductosMenorMayor.get(j).getvalor()) {
+                        todosLosProductosMenorMayor.add(i, listaOrdenada.remove(j));
+                    }
+                }
+            }
+
+            return todosLosProductosMenorMayor;
+        }
